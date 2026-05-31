@@ -57,7 +57,7 @@ with left:
             Expected_Loss_Cr=scenario_df["Expected_Loss"].map(inr_cr),
             Capital_Required_Cr=scenario_df["Capital_Required"].map(inr_cr),
         )[["Scenario", "Total_Portfolio_Cr", "Expected_Loss_Cr", "EL_Pct", "Capital_Required_Cr"]],
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 
@@ -74,7 +74,7 @@ with right:
         rating_summary[
             ["credit_rating", "loans", "ead", "avg_pd", "avg_lgd", "baseline_el", "severe_el", "watchlist_loans"]
         ],
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 
@@ -85,7 +85,7 @@ sector_summary["Baseline EL Rs Cr"] = sector_summary["baseline_el"].map(inr_cr)
 sector_summary["Severe EL Rs Cr"] = sector_summary["severe_el"].map(inr_cr)
 st.dataframe(
     sector_summary[["sector", "loans", "EAD Rs Cr", "Baseline EL Rs Cr", "Severe EL Rs Cr", "watchlist_loans"]],
-    use_container_width=True,
+    width="stretch",
     hide_index=True,
 )
 
@@ -109,7 +109,7 @@ st.dataframe(
             "watchlist_reason",
         ]
     ],
-    use_container_width=True,
+    width="stretch",
     hide_index=True,
 )
 
